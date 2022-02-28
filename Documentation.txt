@@ -1,0 +1,38 @@
+Добрый день <Name>, в ходе работы над интеграцией с вашей платежной у нас возник ряд попросов и предложений
+
+1. На запросы нам будет необъодим слелующий формат ответов
+    1.1 /deposit
+        description: str
+        amount: float
+        currency: str
+        redirect_success_url: str
+        redirect_failure_url: str
+        locale: str
+        merchant_id: uuid
+
+    1.2 /payout
+        currency: str
+        amount: float
+        merchant_id: uuid
+        operation_time: int
+        operation_success: bool
+        operation_description: str
+
+    1.3 Необходим Callback
+        meta: {
+                total: int
+                pages: int
+                page: int
+                }
+        id: uuid
+        status: str
+        status_detail: str
+        attempt: int
+        max_attempt: int
+        created: int
+        progresses: int
+
+2. Есть ряд вопросов
+    2.1 Мы предположили вариант, но хотели бы уточнить как происходит авторизция
+    2.2 Есть ли какие-ли открытые ключи, для запросов
+    2.3 Какие лимиты для обработки запроса
